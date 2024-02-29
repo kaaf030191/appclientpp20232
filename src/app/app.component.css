@@ -1,0 +1,38 @@
+.dataContainer {
+	background-color: #163f76;
+	border: 1px solid #999999;
+	border-radius: 5px;
+	box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+	color: #ffffff;
+	display: inline-block;
+	margin: 4px;
+	padding: 7px;
+	position: relative;
+	text-align: left;
+	vertical-align: middle;
+	width: 270px;
+}
+
+.dataContainer > .dataContainerConnect {
+	background-color: green;
+	border: 1px solid #ffffff;
+	border-radius: 20px;
+	display: inline-block;
+	height: 20px;
+	position: absolute;
+	right: 5px;
+	top: 3px;
+	width: 20px;
+}
+
+.dataContainer > .dataContainerDisconnect {
+	background-color: #cccccc;
+	border: 1px solid #ffffff;
+	border-radius: 20px;
+	display: inline-block;
+	height: 20px;
+	position: absolute;
+	right: 5px;
+	top: 3px;
+	width: 20px;
+}
