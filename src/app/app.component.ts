@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TeacherService } from './api/teacher.service';
 import { GetTeacherStatusService } from './observable/get-teacher-status.service';
 
 @Component({
@@ -12,36 +11,17 @@ export class AppComponent {
 	listTTeacher: any[] = [];
 
 	constructor(
-		private getTeacherStatusService: GetTeacherStatusService,
-		private teacherService: TeacherService
+		private getTeacherStatusService: GetTeacherStatusService
 	) {}
 
 	ngOnInit() {
 		this.getTeacherStatusService.onChange().subscribe({
-			next: (response: number) => {
-				console.log(response + '...');
+			next: (response: any[]) => {
+				this.listTTeacher = response;
 			},
 			error: (error: any) => {
 				console.log(error);
 			}
 		});
-
-		this.getTeacherStatusService.onChange().subscribe({
-			next: (response: number) => {
-				console.log(response + '!!!');
-			},
-			error: (error: any) => {
-				console.log(error);
-			}
-		});
-
-		// this.teacherService.getAll().subscribe({
-		// 	next: (response: any) => {
-		// 		this.listTTeacher = response.listTTeacher;
-		// 	},
-		// 	error: (error: any) => {
-		// 		console.log(error);
-		// 	}
-		// });
 	}
 }
